@@ -40,3 +40,11 @@ task sayHello {
         println 'Hello, Gradle!'
     }
 }
+
+task build {
+    dependsOn 'compileJava'
+    dependsOn 'processResources'
+    dependsOn 'classes'
+    dependsOn 'jar'
+    // Vous pouvez ajouter d'autres dépendances de tâche si nécessaire
+}
