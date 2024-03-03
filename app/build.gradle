@@ -36,19 +36,6 @@ application {
     mainClass = 'org.example.App'
 }
 
-// Task pour générer un artefact JAR exécutable
-jar {
-    manifest {
-        attributes(
-            'Main-Class': application.mainClass
-        )
-    }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    with jar
-}
-
 task sayHello {
     doLast {
         println 'Hello, Gradle!'
