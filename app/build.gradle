@@ -9,7 +9,15 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'java'
+    id 'com.github.node-gradle.node' version '7.0.2'
 }
+
+node {
+    version = '21.6.2'
+    npmVersion = '10.2.4'
+    download = true
+}
+
 
 repositories {
     // Use Maven Central for resolving dependencies.
